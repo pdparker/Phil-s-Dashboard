@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Phil's Analytical Dashboards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#98001b',
+                        'primary-container': '#be1e2d',
+                        'secondary': '#7c5800',
+                        'surface': '#f8f9ff',
+                        'surface-container-low': '#eff4ff',
+                        'surface-container-lowest': '#ffffff',
+                        'on-surface': '#0b1c30',
+                        'outline-variant': '#e3bebb',
+                    },
+                    fontFamily: {
+                        'headline': ['Manrope', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '0.75rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .ghost-border {
+            border: 1px solid rgba(227, 190, 187, 0.15);
+        }
+
+        .ambient-shadow {
+            box-shadow: 0 12px 32px -4px rgba(11, 28, 48, 0.06);
+        }
+
+        .ambient-shadow:hover {
+            box-shadow: 0 20px 40px -4px rgba(11, 28, 48, 0.12);
+        }
+    </style>
+</head>
+
+<body class="text-on-surface min-h-screen">
+
+    <header class="py-12 px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div class="space-y-4">
+                <div class="inline-flex items-center px-4 py-2 bg-white rounded-lg ambient-shadow ghost-border">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Australian_Catholic_University_%28logo%29.svg/500px-Australian_Catholic_University_%28logo%29.svg.png"
+                        alt="ACU Logo" class="h-12 w-auto object-contain">
+                </div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">
+                    Phil's Analytical Dashboards
+                </h1>
+                <p class="text-slate-500 font-medium tracking-widest uppercase text-xs">
+                    The Academic Architect <span class="mx-2 text-slate-300">|</span> 2025-2026 Strategic Suite
+                </p>
+            </div>
+            <div
+                class="hidden lg:block h-[2px] flex-grow bg-gradient-to-r from-outline-variant/30 to-transparent ml-12">
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-8 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <a href="https://pdparker.github.io/cricos-dashboard-2025-2026/"
+                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-3xl">account_balance</span>
+                </div>
+                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">CRICOS Dashboard</h2>
+                <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                    A comprehensive overview of new and removed course from 2025-2026.
+                </p>
+                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                    Launch Intel <span
+                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </div>
+            </a>
+
+            <a href="https://pdparker.github.io/edu_numbers_australia/"
+                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-3xl">query_stats</span>
+                </div>
+                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Edu Numbers Australia</h2>
+                <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                    Deep-dives on higher education R&D statistics.
+                </p>
+                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                    View Metrics <span
+                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </div>
+            </a>
+
+            <a href="https://pdparker.github.io/university-outcomes-dashboard/"
+                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                <div
+                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                    <span class="material-symbols-outlined text-3xl">monitoring</span>
+                </div>
+                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Outcomes</h2>
+                <p class="text-sm text-slate-500 leading-relaxed mb-6">
+                    Performance metrics tracking graduate success, institutional impact, and career outcomes.
+                </p>
+                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                    Analyze Success <span
+                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </div>
+            </a>
+
+        </div>
+
+        <footer class="mt-16 bg-primary/5 rounded-xl p-8 border border-primary/10">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="p-4 bg-white rounded-full ambient-shadow">
+                    <span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+                </div>
+                <div>
+                    <h3 class="font-headline font-bold text-primary text-lg mb-1">Executive Advisory</h3>
+                    <p class="text-xs text-on-surface/70 leading-relaxed max-w-2xl">
+                        These dashboards are for institutional strategy and internal use. Data are from public sources
+                        only.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+</body>
+
+</html>
