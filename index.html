@@ -6,9 +6,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Phil's Analytical Dashboards</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         rel="stylesheet" />
     <script>
@@ -16,18 +13,21 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#98001b',
-                        'primary-container': '#be1e2d',
-                        'secondary': '#7c5800',
-                        'surface': '#f8f9ff',
-                        'surface-container-low': '#eff4ff',
-                        'surface-container-lowest': '#ffffff',
-                        'on-surface': '#0b1c30',
-                        'outline-variant': '#e3bebb',
+                        'primary': '#3C1053',
+                        'primary-70': '#63467B',
+                        'primary-20': '#D8CDE1',
+                        'primary-10': '#F0EAF4',
+                        'accent': '#F2120C',
+                        'accent-dark': '#C10E09',
+                        'surface': '#FBF6F0',
+                        'surface-container-low': '#F4EDE4',
+                        'surface-container-lowest': '#FFFFFF',
+                        'on-surface': '#1E1B18',
+                        'on-surface-soft': '#5C5651',
                     },
                     fontFamily: {
-                        'headline': ['Manrope', 'sans-serif'],
-                        'body': ['Inter', 'sans-serif'],
+                        'headline': ['Nexa', 'Avenir Next', 'Montserrat', 'Arial', 'sans-serif'],
+                        'body': ['Arial', 'Helvetica', 'sans-serif'],
                     },
                     borderRadius: {
                         'xl': '0.75rem',
@@ -38,25 +38,50 @@
     </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9ff;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #FBF6F0;
         }
 
-        h1,
-        h2 {
-            font-family: 'Manrope', sans-serif;
+        h1, h2, h3 {
+            font-family: 'Nexa', 'Avenir Next', Montserrat, Arial, sans-serif;
         }
 
         .ghost-border {
-            border: 1px solid rgba(227, 190, 187, 0.15);
+            border: 1px solid rgba(60, 16, 83, 0.10);
         }
 
         .ambient-shadow {
-            box-shadow: 0 12px 32px -4px rgba(11, 28, 48, 0.06);
+            box-shadow: 0 12px 48px -8px rgba(60, 16, 83, 0.10);
         }
 
         .ambient-shadow:hover {
-            box-shadow: 0 20px 40px -4px rgba(11, 28, 48, 0.12);
+            box-shadow: 0 20px 56px -8px rgba(60, 16, 83, 0.16);
+        }
+
+        .section-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #5C5651;
+        }
+
+        .freshness-badge {
+            font-size: 0.66rem;
+            font-weight: 600;
+            color: #5C5651;
+            background: #F4EDE4;
+            border-radius: 999px;
+            padding: 3px 10px;
+            opacity: 0;
+            transform: translateY(-2px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .freshness-badge.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -73,122 +98,145 @@
                 <h1 class="text-4xl md:text-5xl font-extrabold text-primary tracking-tight">
                     Phil's Analytical Dashboards
                 </h1>
-                <p class="text-slate-500 font-medium tracking-widest uppercase text-xs">
-                    The Academic Architect <span class="mx-2 text-slate-300">|</span> 2025-2026 Strategic Suite
+                <p class="text-on-surface-soft font-medium tracking-widest uppercase text-xs">
+                    The Academic Architect <span class="mx-2 text-primary-20">|</span> 2025-2026 Strategic Suite
                 </p>
             </div>
             <div
-                class="hidden lg:block h-[2px] flex-grow bg-gradient-to-r from-outline-variant/30 to-transparent ml-12">
+                class="hidden lg:block h-[2px] flex-grow bg-gradient-to-r from-primary-20/60 to-transparent ml-12">
             </div>
         </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-8 pb-20">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <a href="https://pdparker.github.io/cricos-dashboard-2025-2026/"
-                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
-                <div
-                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                    <span class="material-symbols-outlined text-3xl">account_balance</span>
-                </div>
-                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">CRICOS Dashboard</h2>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                    A comprehensive overview of courses added and removed on CRICOS, 2025 → 2026.
-                </p>
-                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
-                    Launch Intel <span
-                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </a>
+        <section class="mb-14">
+            <div class="flex items-baseline gap-3 mb-6">
+                <h2 class="section-kicker">Research Intelligence</h2>
+                <div class="h-px flex-grow bg-primary-20/50"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            <a href="https://pdparker.github.io/edu_numbers_australia/"
-                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
-                <div
-                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                    <span class="material-symbols-outlined text-3xl">query_stats</span>
-                </div>
-                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Edu Numbers Australia</h2>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                    Deep-dives on higher education R&D statistics.
-                </p>
-                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
-                    View Metrics <span
-                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </a>
+                <a href="https://pdparker.github.io/edu_numbers_australia/"
+                    class="group relative block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                    <span class="freshness-badge absolute top-6 right-6" data-manifest-url="https://pdparker.github.io/edu_numbers_australia/manifest.json"></span>
+                    <div
+                        class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <span class="material-symbols-outlined text-3xl">query_stats</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Edu Numbers Australia</h3>
+                    <p class="text-sm text-on-surface-soft leading-relaxed mb-6">
+                        Deep-dives on higher education R&D statistics.
+                    </p>
+                    <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                        View Metrics <span
+                            class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </div>
+                </a>
 
-            <a href="https://pdparker.github.io/university-outcomes-dashboard/"
-                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
-                <div
-                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                    <span class="material-symbols-outlined text-3xl">monitoring</span>
-                </div>
-                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Outcomes</h2>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                    Performance metrics tracking graduate success, institutional impact, and career outcomes.
-                </p>
-                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
-                    Analyze Success <span
-                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </a>
+                <a href="https://pdparker.github.io/uni-staff-dashboard/"
+                    class="group relative block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                    <span class="freshness-badge absolute top-6 right-6" data-manifest-url="https://pdparker.github.io/uni-staff-dashboard/manifest.json"></span>
+                    <div
+                        class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <span class="material-symbols-outlined text-3xl">badge</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Staff Numbers</h3>
+                    <p class="text-sm text-on-surface-soft leading-relaxed mb-6">
+                        Sector-wide staff FTE and headcount by institution, function, and classification, 2021-2025.
+                    </p>
+                    <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                        View Numbers <span
+                            class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </div>
+                </a>
 
-            <a href="https://pdparker.github.io/uni-staff-dashboard/"
-                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
-                <div
-                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                    <span class="material-symbols-outlined text-3xl">badge</span>
-                </div>
-                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Staff Numbers</h2>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                    Sector-wide staff FTE and headcount by institution, function, and classification, 2021-2025.
-                </p>
-                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
-                    View Numbers <span
-                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </a>
+                <a href="https://pdparker.github.io/uni_rankings/"
+                    class="group relative block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                    <span class="freshness-badge absolute top-6 right-6" data-manifest-url="https://pdparker.github.io/uni_rankings/manifest.json"></span>
+                    <div
+                        class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <span class="material-symbols-outlined text-3xl">emoji_events</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Rankings</h3>
+                    <p class="text-sm text-on-surface-soft leading-relaxed mb-6">
+                        Track and compare global and national university rankings across major ranking systems.
+                    </p>
+                    <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                        Explore Rankings <span
+                            class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </div>
+                </a>
 
-            <a href="https://pdparker.github.io/uni_rankings/"
-                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
-                <div
-                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                    <span class="material-symbols-outlined text-3xl">emoji_events</span>
-                </div>
-                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Rankings</h2>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                    Track and compare global and national university rankings across major ranking systems.
-                </p>
-                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
-                    Explore Rankings <span
-                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </a>
+            </div>
+        </section>
 
-            <a href="https://pdparker.github.io/student-interest-signals/"
-                class="group block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
-                <div
-                    class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
-                    <span class="material-symbols-outlined text-3xl">trending_up</span>
-                </div>
-                <h2 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Student Interest Signals</h2>
-                <p class="text-sm text-slate-500 leading-relaxed mb-6">
-                    Leading indicators of domestic university demand by discipline — school subject choice, search
-                    interest, and application trends.
-                </p>
-                <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
-                    Spot the Trend <span
-                        class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </div>
-            </a>
+        <section class="mb-14">
+            <div class="flex items-baseline gap-3 mb-6">
+                <h2 class="section-kicker">Market &amp; Product Intelligence</h2>
+                <div class="h-px flex-grow bg-primary-20/50"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        </div>
+                <a href="https://pdparker.github.io/cricos-dashboard-2025-2026/"
+                    class="group relative block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                    <span class="freshness-badge absolute top-6 right-6" data-manifest-url="https://pdparker.github.io/cricos-dashboard-2025-2026/manifest.json"></span>
+                    <div
+                        class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <span class="material-symbols-outlined text-3xl">account_balance</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">CRICOS Dashboard</h3>
+                    <p class="text-sm text-on-surface-soft leading-relaxed mb-6">
+                        A comprehensive overview of courses added and removed on CRICOS, 2025 → 2026.
+                    </p>
+                    <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                        Launch Intel <span
+                            class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a href="https://pdparker.github.io/university-outcomes-dashboard/"
+                    class="group relative block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                    <span class="freshness-badge absolute top-6 right-6" data-manifest-url="https://pdparker.github.io/university-outcomes-dashboard/manifest.json"></span>
+                    <div
+                        class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <span class="material-symbols-outlined text-3xl">monitoring</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">University Outcomes</h3>
+                    <p class="text-sm text-on-surface-soft leading-relaxed mb-6">
+                        Performance metrics tracking graduate success, institutional impact, and career outcomes.
+                    </p>
+                    <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                        Analyze Success <span
+                            class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a href="https://pdparker.github.io/student-interest-signals/"
+                    class="group relative block bg-surface-container-lowest p-8 rounded-xl ambient-shadow ghost-border transition-all duration-300 hover:-translate-y-1">
+                    <span class="freshness-badge absolute top-6 right-6" data-manifest-url="https://pdparker.github.io/student-interest-signals/manifest.json"></span>
+                    <div
+                        class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-white">
+                        <span class="material-symbols-outlined text-3xl">trending_up</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Student Interest Signals</h3>
+                    <p class="text-sm text-on-surface-soft leading-relaxed mb-6">
+                        Leading indicators of domestic university demand by discipline — school subject choice, search
+                        interest, and application trends.
+                    </p>
+                    <div class="flex items-center text-primary text-[10px] font-bold uppercase tracking-widest">
+                        Spot the Trend <span
+                            class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
 
         <footer class="mt-16 bg-primary/5 rounded-xl p-8 border border-primary/10">
             <div class="flex flex-col md:flex-row items-center gap-6">
                 <div class="p-4 bg-white rounded-full ambient-shadow">
-                    <span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+                    <span class="material-symbols-outlined text-accent text-3xl">lightbulb</span>
                 </div>
                 <div>
                     <h3 class="font-headline font-bold text-primary text-lg mb-1">Executive Advisory</h3>
@@ -200,6 +248,21 @@
             </div>
         </footer>
     </main>
+
+    <script>
+        document.querySelectorAll('[data-manifest-url]').forEach(function (el) {
+            fetch(el.getAttribute('data-manifest-url'))
+                .then(function (r) { if (!r.ok) throw new Error('no manifest'); return r.json(); })
+                .then(function (m) {
+                    if (!m.lastBuild) return;
+                    var d = new Date(m.lastBuild + 'T00:00:00');
+                    el.textContent = 'Updated ' + d.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+                    if (m.notes) el.title = m.notes;
+                    el.classList.add('visible');
+                })
+                .catch(function () { /* no manifest yet — badge stays hidden */ });
+        });
+    </script>
 
 </body>
 
