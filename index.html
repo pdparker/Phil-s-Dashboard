@@ -83,10 +83,60 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Phase 4.1: print-only header, hidden on screen */
+        .print-only {
+            display: none;
+        }
+
+        @media print {
+            @page {
+                margin: 14mm;
+            }
+
+            body {
+                background: #FFFFFF !important;
+            }
+
+            .ambient-shadow,
+            .ambient-shadow:hover {
+                box-shadow: none !important;
+            }
+
+            .print-only {
+                display: block;
+                margin-bottom: 18px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #1E1B18;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 11px;
+                color: #1E1B18;
+            }
+
+            .print-only strong {
+                font-size: 13px;
+            }
+
+            /* keep each card intact on one page */
+            section .grid > a,
+            footer {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            a[href] {
+                text-decoration: none;
+            }
+        }
     </style>
 </head>
 
 <body class="text-on-surface min-h-screen">
+
+    <div class="print-only">
+        <strong>Phil's Analytical Dashboards</strong><br>
+        Printed from pdparker.github.io/Phil-s-Dashboard/ — <span class="print-date"></span>
+    </div>
 
     <header class="py-12 px-8 max-w-7xl mx-auto">
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -99,7 +149,7 @@
                     Phil's Analytical Dashboards
                 </h1>
                 <p class="text-on-surface-soft font-medium tracking-widest uppercase text-xs">
-                    The Academic Architect <span class="mx-2 text-primary-20">|</span> 2025-2026 Strategic Suite
+                    The Academic Architect <span class="mx-2 text-primary-70">|</span> 2025-2026 Strategic Suite
                 </p>
             </div>
             <div
@@ -301,6 +351,11 @@
     </main>
 
     <script>
+        var printDateEl = document.querySelector('.print-date');
+        if (printDateEl) {
+            printDateEl.textContent = new Date().toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' });
+        }
+
         document.querySelectorAll('[data-manifest-url]').forEach(function (el) {
             fetch(el.getAttribute('data-manifest-url'))
                 .then(function (r) { if (!r.ok) throw new Error('no manifest'); return r.json(); })
